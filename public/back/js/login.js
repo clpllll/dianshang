@@ -40,7 +40,7 @@ $(function(){
 
 	})
 	$form.on('success.form.bv',function(e){
-		console.log($(this));
+		// console.log($(this));
 		//阻止submit的默认事件
 		e.preventDefault();
 		// console.log($form.serialize());
@@ -53,10 +53,10 @@ $(function(){
 				// console.log(data);
 				// 创建实例
 				var validator = $form.data('bootstrapValidator');
-				console.log(validator);
+				// console.log(validator);
 
 				if(data.error===1000){
-					console.log("ddsdsd");
+					// console.log("ddsdsd");
 					//更新字段
 					validator.updateStatus('username','INVALID','callback');
 				}
@@ -72,6 +72,7 @@ $(function(){
 		})
 		
 	})
+	
 
 
 })
