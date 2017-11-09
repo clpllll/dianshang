@@ -53,20 +53,17 @@ $(function(){
 				// console.log(data);
 				// 创建实例
 				var validator = $form.data('bootstrapValidator');
-				// console.log(validator);
 
 				if(data.error===1000){
-					// console.log("ddsdsd");
 					//更新字段
 					validator.updateStatus('username','INVALID','callback');
 				}
 				if(data.error===1001){
-					// console.log("ddsdsd");
 					//更新字段
 					validator.updateStatus('password','INVALID','callback');
 				}
-				if(data.sueccss){
-					loadction.href = "index.html";
+				if(data.success){
+					location.href = "index.html";
 				}
 			}
 		})
