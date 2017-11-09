@@ -26,7 +26,9 @@ a:link,a:visited,a:hover,a:active{
 	width: 180px;
 	height: 100%;
 	background-color: #222d32;
+	// margin-left: -180px;
 }
+//隐藏作用
 .sidebar.now{
 	margin-left: -180px;
 }
@@ -45,6 +47,7 @@ a:link,a:visited,a:hover,a:active{
 .sidebar  .user img{
 	width: 50px;
 	border-radius: 50%;
+
 }
 .sidebar .side-top a{
 	display: block;
@@ -64,10 +67,10 @@ a:link,a:visited,a:hover,a:active{
 	padding-left: 30px;
 	border: 3px solid transparent;
 }
-.sidebar  .menu a.now,
-.sidebar .menu .submenu a.now{
+.sidebar a.now{
 	border-left-color: #3c8dbc;
 	color:#fff;
+	background-color: #1d1f21;
 }
 .sidebar .menu .submenu{
 	padding-left:-30px;
@@ -78,7 +81,6 @@ a:link,a:visited,a:hover,a:active{
 	padding-left:50px;
 }
 .main{
-	background-color: pink;
 	height: 100%;
 	box-sizing: border-box;
 	padding-left: 180px;
