@@ -29,7 +29,7 @@ a:link,a:visited,a:hover,a:active{
 	// margin-left: -180px;
 }
 //隐藏作用
-.sidebar.now{
+.b{
 	margin-left: -180px;
 }
 .sidebar .side-top{
@@ -98,11 +98,23 @@ a:link,a:visited,a:hover,a:active{
 }
 .main .content{
 	padding: 15px;
-	// background-color: #fff;
 	width: 100%;
-	height: 100%;
+	// height: 100%;
 }
 .main.now{
 	padding: 0;
+
+}
+.content .nav{
+	height: 50px;
+}
+.content .drawing{
+	width: 100%;
+}
+.content .drawing #pillar,
+.content .drawing #cake{
+	width: 48%;
+	height: 400px;
+	background-color: pink;
 
 }

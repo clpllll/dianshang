@@ -35,7 +35,7 @@ $(function(){
 	//左右收缩
 	$('.btn_menu').on('click',function(){
 		$('.main').toggleClass('now');
-		$('.sidebar').toggleClass('now');
+		$('.sidebar').toggleClass('b');
 	})
 	//退出登录
 	$('.btn_exitSure').on("click",function(){
