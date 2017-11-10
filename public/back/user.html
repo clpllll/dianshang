@@ -74,13 +74,51 @@
 							<li class="active">用户管理</li>
 						</ol>
 					</div>
+					<table class=" table-hover table table-bordered text-center">
+					  <thead>
+					  	<tr>
+					  		<td width="10%">序号</td>
+					  		<td width="30%">用户名</td>
+					  		<td width="30%">手机号</td>
+					  		<td width="20%">状态</td>
+					  		<td width="10%">操作</td>
+					  	</tr>
+					  </thead>
+					  <tbody>
+
+					  </tbody>
+					</table>
+					<!-- 分页 -->
+					<div class="text-right">
+						<ul id="paginator"></ul>
+					</div>
 				</div>
 
 			</div>
+			<script type="text/html" id="tpl">
+			{{each rows v i}}
+				<tr>
+					<td>{{(page-1)*size+i+1}}</td>
+					<td>{{v.username}}</td>
+					<td>{{v.mobile}}</td>
+					<td>{{v.isDelete?"正常":'禁用'}}</td>
+					<td data-id="{{v.id}}">
+						{{if v.isDelete}}
+					  	<button type="button" class="btn btn-danger btn-sm">禁用</button>
+					  	{{/if}}
+					  	{{if v.isDelete==0}}
+					  	<button type="button" class="btn btn-info btn-sm">启用</button>
+					  	{{/if}}
+					</td>
+				</tr>
+			{{/each}}
+			</script>
 			<script src="lib/jquery/jquery.min.js"></script>
 			<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 			<script src="lib/nprogress/nprogress.js"></script>
+			<script src="lib/artTemplate/template-web.js"></script>
+			<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 			<script src="js/common.js"></script>
-			<script src="js/index.js"></script>
+			<script src="js/user.js"></script>
 		</body>
 		</html>
