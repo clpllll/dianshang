@@ -15,7 +15,7 @@ $(function(){
 		$.ajax({
 			url:'/employee/checkRootLogin',
 			success:function(data){
-				console.log(data);
+				// console.log(data);
 				if(data.error==400){
 					location.href="login.html";
 				}
