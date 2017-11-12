@@ -157,3 +157,16 @@ a:link,a:visited,a:hover,a:active{
 	height: 34px;
 	opacity: 0;
 }
+.fileUpload{
+	position: relative;
+	width: 82px;
+	height: 34px;
+}
+.fileUpload input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+}
