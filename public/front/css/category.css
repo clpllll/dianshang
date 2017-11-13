@@ -1,0 +1,44 @@
+#content .left{
+	float: left;
+	width: 90px;
+	height: 100%;
+	position: relative;
+	background-color: #fff;
+}
+#content .right{
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: #fff;
+	position: relative;
+}
+#content .left ul a{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-top:1px solid #ccc ;
+	border-right:1px solid #ccc ;
+	background-color: #f3f4f5;
+}
+#content .left ul li.now a{
+	border-right: none;
+	background-color: #fff;
+}
+#content .right ul li{
+	width: 33.33%;
+	float: left;
+	background-color: #fff;
+	text-align: center;
+}
+#content .right ul li span{
+	display: inline-block;
+	width: 100%;
+	color:#333;
+	padding-bottom: 10px;
+}
+#content .right ul li img{
+	width: 62px;
+	height: 62px;
+}

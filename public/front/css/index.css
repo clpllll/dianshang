@@ -1,0 +1,11 @@
+#content .picnav li{
+	float: left;
+	width: 33.33%;
+}
+#content .picnav li img{
+	width: 100%;
+}
+#content .picnav{
+	padding:10px;
+
+}

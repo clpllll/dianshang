@@ -1,0 +1,34 @@
+$(function(){
+	$.ajax({
+		url:'/category/queryTopCategory',
+		type:'get',
+		success:function(data){
+			console.log(data);
+			$('.l_nav').html(template('TopCategorytpl',data));
+			$.ajax({
+				url:'/category/querySecondCategory',
+				type:'get',
+				data:{
+					id:data.rows[0].id
+				},
+				success:function(data){
+					console.log(data);
+					$('.right ul').html(template('SecondCategorytpl',data))
+				}
+			})
+		}
+	})
+	$('.l_nav').on('click','a',function(){
+		$.ajax({
+			url:'/category/querySecondCategory',
+			type:'get',
+			data:{
+				id:$(this).data('id')
+			},
+			success:function(data){
+				console.log(data);
+				$('.right ul').html(template('SecondCategorytpl',data))
+			}
+		})
+	})
+})
