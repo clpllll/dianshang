@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+		var obj={
+			name:'zs',
+			age:'18',
+			decs:'呵呵'
+		};
+		//?name=zs&age=18&decs=呵呵
+		var str ='?';
+		for(var k in obj){
+			// console.log(obj[k])
+			str +=k+"="+obj[k]+"&"
+		}
+		console.log(str.slice(0,-1));
+	</script>
+</body>
+</html>

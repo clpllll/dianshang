@@ -17,43 +17,24 @@
 				<i class="mui-icon mui-icon-arrowleft"></i>
 			</a>
 			<h4>乐淘云购</h4>
-			<a href="search.html">
-				<i class="fa fa-search"></i>
-			</a>
+
 			
 		</header>
 		<!-- 内容模块 -->
 		<main id="content">
 			<!-- 区域滚动 -->
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<div class="search">
-							<input type="text" placeholder="请输入搜索关键字">
-							<button class="mui-btn-blue">搜索</button>
-						</div>
-						<!-- 历史记录列表 -->
-						<div class="history">
-							<div class="title">
-								<span>搜索历史记录</span>
-								<span class="mui-pull-right fa fa-trash">清空历史记录</span>
-							</div>
-							<ul>
-								<li>
-									<a href="#">aaa</a>
-									<i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
-								</li>
-								<li>
-									<a href="#">aaa</a>
-									<i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
-								</li>
-								<li>
-									<a href="#">aaa</a>
-									<i class="mui-pull-right mui-icon mui-icon-closeempty"></i>
-								</li>
-							</ul>
-						</div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="search">
+						<input type="text" placeholder="请输入搜索关键字">
+						<button class="mui-btn-blue">搜索</button>
+					</div>
+					<!-- 历史记录列表 -->
+					<div class="history">
+						<!-- 此处挖坑 -->
 					</div>
 				</div>
+			</div>
 
 		</main>
 		<!-- 底部 -->
@@ -86,7 +67,25 @@
 			</ul>
 		</div>
 	</div>
-
+	<script type="text/html" id="tpl">
+	{{if arr.length==0}}
+	<p>没有搜索历史记录</p>
+	{{/if}}
+	{{if arr.length>0}}
+		<div class="title">
+			<span>搜索历史记录</span>
+			<span class="mui-pull-right fa fa-trash btn_empty">清空历史记录</span>
+		</div>
+		<ul>
+			{{each arr v i}}
+			<li>
+				<a href="#">{{v}}</a>
+				<i class="mui-pull-right mui-icon mui-icon-closeempty" data-index="{{i}}"></i>
+			</li>
+			{{/each}}
+		</ul>
+		{{/if}}
+	</script>
 	<script src="lib/mui/js/mui.js"></script>
 	<script src="lib/zepto/zepto.min.js"></script>
 	<script src="lib/artTemplate/template-web.js"></script>
