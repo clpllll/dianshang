@@ -44,11 +44,15 @@ $(function(){
 
 	//增加
 	$('.search button').on('click',function(){
+
 		var arr = getLocalstorage();
 
 		// console.log('haha');
 		//获取 iuput 的值 添加到缓存数组中 渲染数据
-		var value = $('.search input').val();
+		var value = $('.search input').val().trim();
+		if(value==''){
+			return false;
+		}
 
 		//判断数组中是否存在这个数据 
 		if(arr.indexOf(value)>=0){
@@ -67,6 +71,7 @@ $(function(){
 		//清空input的值
 		$('.search input').val('');
 		render();
+		location.href="productlist.html?key="+value;
 
 	})
 	

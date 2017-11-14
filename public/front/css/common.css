@@ -75,6 +75,10 @@ i{
 	border: 1px solid #ccc;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
+	font-size: 14px;
+}
+#content .product li a{
+	color:#666;
 }
 #content .product li:nth-of-type(2n){
 	float: right;
@@ -96,7 +100,27 @@ i{
 	color:red;
 }
 
+#content .search{
+	padding:10px;
+	position: relative;
+}
+#content .search input{
+	border: 1px solid #069;
+	border-radius: 5px;
+	font-size: 12px;
+	height: 30px;
+	margin: 0;
+}
+#content .search button{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background-color: #069;
+	height: 30px;
+	width: 60px;
+	border: 0 5px 5px 0;
 
+}
 #foot{
 	position: absolute;
 	height: 55px;

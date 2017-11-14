@@ -1,0 +1,59 @@
+#content .info {
+	padding:0 10px;
+}
+#content .info strong,
+#content .info .price{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	border-top:1px solid #ccc ;
+}
+#content .info .price span{
+	color:red;
+	font-size: 20px;
+}
+#content .info .price del{
+	margin-left: 10px;
+	font-size: 14px;
+	color:#666;
+}
+#content .info .size{
+	border-top:1px solid #ccc ;
+	padding:10px 0;
+
+	line-height: 30px;	
+
+}
+#content .info .size span{
+border: 1px solid #ccc;
+padding:5px;
+font-size: 12px;
+margin-right: 5px;
+cursor: pointer;
+}
+#content .info .size span.now{
+	background-color: blue;
+	color:#fff;
+}
+#content .info .num {
+	border-top:1px solid #ccc ;
+	padding:10px 0;
+}
+#content .info .num span{
+	font-size: 14px; 
+	color:#666;
+}
+#content .info .desc{
+	border-top:1px solid #ccc ;
+	padding:10px 0;
+}
+#footer{
+	padding:10px;
+	height: 55px;
+	background-color: #eee;
+}
+#footer span{
+	height: 33px;
+	line-height: 33px;
+	font-size: 14px;
+}

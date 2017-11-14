@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 	<link rel="stylesheet" href="lib/mui/css/mui.min.css">
 	<link rel="stylesheet" href="lib/fa/css/font-awesome.css">
 	<link rel="stylesheet" href="css/common.css">
-	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" href="css/productlist.css">
 </head>
 <body>
 	<div id="container">
@@ -25,14 +26,27 @@
 			<!-- 区域滚动 -->
 			<div class="mui-scroll-wrapper">
 				<div class="mui-scroll">
+					<!-- 搜索模块 -->
 					<div class="search">
 						<input type="text" placeholder="请输入搜索关键字">
 						<button class="mui-btn-blue">搜索</button>
 					</div>
-					<!-- 历史记录列表 -->
-					<div class="history">
+					<!-- 排序 -->
+					<ul class="sort mui-clearfix">
+						<li>上架时间<i class="fa fa-angle-down"></i></li>
+						<li data-type="price">价格<i class="fa fa-angle-down"></i></li>
+						<li data-type="num">库存<i class="fa fa-angle-down"></i></li>
+						<li>折扣<i class="fa fa-angle-down"></i></li>
+					</ul>
+					<!-- 内容区域 -->
+					<!-- 产品 -->
+					<ul class="product mui-clearfix">
 						<!-- 此处挖坑 -->
-					</div>
+
+
+					</ul>
+
+
 				</div>
 			</div>
 
@@ -68,28 +82,27 @@
 		</div>
 	</div>
 	<script type="text/html" id="tpl">
-	{{if arr.length==0}}
-	<p>没有搜索历史记录</p>
+	{{if data.length==0}}
+	<p>没有更多的商品</p>
 	{{/if}}
-	{{if arr.length>0}}
-		<div class="title">
-			<span>搜索历史记录</span>
-			<span class="mui-pull-right fa fa-trash btn_empty">清空历史记录</span>
-		</div>
-		<ul>
-			{{each arr v i}}
-			<li>
-				<a href="productlist.html?key={{v}}">{{v}}</a>
-				<i class="mui-pull-right mui-icon mui-icon-closeempty" data-index="{{i}}"></i>
-			</li>
-			{{/each}}
-		</ul>
-		{{/if}}
+	{{if data.length>0}}
+	{{each data v  i}}
+		<li>
+			<a href="product.html?productid={{v.id}}" class="item""><img src="{{v.pic[0].picAddr}}" alt="">
+				<span>{{v.proName}}</span>
+				<div>
+					<i>&yen;{{v.price}}</i><del>&yen;{{v.oldPrice}}</del>
+				</div>
+				<div><button class="mui-btn-blue">立刻购买</button></div>
+			</a>
+		</li>
+		{{/each}}
+	{{/if}}
 	</script>
 	<script src="lib/mui/js/mui.js"></script>
 	<script src="lib/zepto/zepto.min.js"></script>
 	<script src="lib/artTemplate/template-web.js"></script>
 	<script src="js/common.js"></script>
-	<script src="js/search.js"></script>
+	<script src="js/productlist.js"></script>
 </body>
 </html>

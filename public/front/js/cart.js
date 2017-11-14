@@ -1,0 +1,11 @@
+$(function(){
+	//发送ajax获取数据
+	$.ajax({
+		url:'/cart/queryCart',
+		type:'get',
+		success:function(data){
+			console.log(data);
+			$('.mui-table-view').html(template('tpl',{data:data}));
+		}
+	})
+})
