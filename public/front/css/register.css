@@ -1,0 +1,47 @@
+
+.mui-input-group div{
+	padding:10px;
+}
+.mui-input-group  input{
+	border: 1px solid #ccc;
+	padding: 0;
+	border-radius: 3px;
+	padding-left: 10px;
+}
+.mui-input-group .mui-input-row{
+	height: 60px;
+}
+.mui-input-group .mui-input-row::after{
+height: 0;
+}
+.mui-input-row .mui-input-password~.mui-icon-eye{
+	line-height: 40px;
+	right: 10px;
+}
+.mui-input-group .mui-input-row .code{
+	width: 60%;
+}
+.mui-input-group .mui-input-row .btn-code{
+	width: 35%;
+	height: 40px;
+	background-color: #007aff;
+	color:#fff;
+	font-size: 17px;
+}
+.btn_register{
+	display: block;
+	width: 100%;
+	height: 40px;
+	background-color: #007aff;
+	color:#fff;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 3px;
+}
+.mui-input-group .mui-input-row .btn-code.now{
+background-color: #ccc;
+}
+.ckeckbox{
+	padding:0 10px;
+	font-size: 14px;
+}

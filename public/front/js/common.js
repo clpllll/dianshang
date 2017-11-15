@@ -31,3 +31,21 @@ gallery.slider({
 	function getKey(k){
 		return	getKeyObj()[k];
 	}
+
+
+
+	function isLogin(){
+					//判断是否登录
+			$.ajax({
+					type:'get',
+					url:'/user/queryUserMessage',
+					success:function(data){
+						// console.log(data);
+						if(data.error==400){
+							// mui.toast(data.message);
+							location.href="login.html?reUrl="+location.href;
+							return false;
+						}
+					}
+					});
+	}

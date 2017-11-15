@@ -36,18 +36,8 @@ $(function(){
 			var num = $('.info .mui-numbox input').val();
 			var id = $('.info').data('id');
 			console.log(id);
+				isLogin();
 
-			//判断是否登录
-			$.ajax({
-					type:'get',
-					url:'/user/queryUserMessage',
-					success:function(data){
-						// console.log(data);
-						if(data.error==400){
-							mui.toast(data.message);
-							location.href="login.html?reUrl="+location.href;
-							return false;
-						}
 						if(!size){
 							mui.toast('請選擇尺碼');
 							return false;
@@ -75,8 +65,7 @@ $(function(){
 						})
 
 
-					}
-			})
+								
                                         
 	})
 

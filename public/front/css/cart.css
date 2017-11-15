@@ -54,3 +54,16 @@
 	color:#fff;
 	padding:0 10px;
 }
+.mui-popup-text {
+	text-align: left;
+}
+.mui-popup span{
+	display: inline-block;
+	border: 1px solid #ccc; 
+	padding:2px;
+	margin-bottom: 5px;
+}
+.mui-popup span.now{
+	background-color: #069;
+	color:#fff;
+}

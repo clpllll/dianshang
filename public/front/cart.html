@@ -39,7 +39,7 @@
 		<!-- 总金额 -->
 		<div class="total">
 			<span>订单总金额:</span>
-			<span>&yen;00.00</span>
+			<span >&yen;<span class="p">00.00</span></span>
 			<a href="#" class="mui-pull-right">生成订单</a>
 		</div>
 		<!-- 底部 -->
@@ -73,11 +73,20 @@
 		</div>
 	</div>
 	<script type="text/html" id="tpl">
-	{{each data v i}}
+		{{if(data.length==0)}}
+		<p>没有更多的商品</p>
+		<a href="index.html">去看看</a>
+		{{/if}}
+		{{each data v i}}
 		<li class="mui-table-view-cell mui-transitioning mui-selected">
 			<div class="mui-slider-right mui-disabled mui-selected">
-				<a class="mui-btn mui-btn-blue mui-icon mui-icon-compose"></a>
-				<a class="mui-btn mui-btn-red mui-icon mui-icon-trash"></a>
+				<a class="mui-btn mui-btn-blue mui-icon mui-icon-compose" data-id="{{v.id}}"
+				data-productNum="{{v.productNum}}"
+				data-productSize="{{v.productSize}}"
+				data-size="{{v.size}}"
+				data-num="{{v.num}}"
+				 ></a>
+				<a class="mui-btn mui-btn-red mui-icon mui-icon-trash btn-delete" data-id="{{v.id}}"></a>
 			</div>
 			<div class="mui-slider-handle">
 				<div class="mui-table-cell">
@@ -89,11 +98,29 @@
 						<p><span class="price">&yen;{{v.price}}</span><span class="oldPrice">&yen;{{v.oldPrice}}</span> <span class="num mui-pull-right">{{v.num}}双</span></p>
 						<p>鞋码:&nbsp;{{v.size}}</p>
 					</div>
-					<input type="checkbox">
-					</div>
+					<input type="checkbox" data-price="{{v.price}}" data-num="{{v.num}}">
+				</div>
 			</div>
 		</li>
 		{{/each}}
+	</script>
+	<script type="text/html" id="tpl2">
+		<div class="size">
+				尺码：
+				<% var temp = productsize.split('-') 
+				for(var i = temp[0];i<temp[1];i++) { %>
+				<span class="{{i==+size?'now':''}}"><%= i %></span>
+				<% } %>
+
+			</div>
+			<div class="num">
+				库存：
+				<div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='{{productnum}}'>
+					<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+					<input class="mui-numbox-input" type="number" value="{{num}}" />
+					<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+				</div>
+			</div>
 	</script>
 	<script src="lib/mui/js/mui.js"></script>
 	<script src="lib/zepto/zepto.min.js"></script>
